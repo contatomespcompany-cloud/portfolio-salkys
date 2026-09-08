@@ -422,6 +422,23 @@
   .pills a:hover{ background:var(--ink); color:var(--butter); }
   .pills a:focus-visible{ outline:3px solid var(--ink); outline-offset:3px; }
 
+  .redes{
+    display:flex; flex-wrap:wrap; justify-content:center;
+    gap:12px; margin-top:34px;
+  }
+  .redes a{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:var(--mono); font-size:13px; font-weight:700;
+    letter-spacing:.04em; text-decoration:none;
+    color:#fff; background:rgba(255,255,255,.07);
+    border:1.5px solid rgba(255,255,255,.32);
+    border-radius:999px; padding:11px 20px;
+    transition:background .16s ease, color .16s ease, border-color .16s ease;
+  }
+  .redes a svg{ width:19px; height:19px; flex:0 0 auto; }
+  .redes a:hover{ background:#fff; color:var(--black); border-color:#fff; }
+  .redes a:focus-visible{ outline:3px solid var(--butter); outline-offset:3px; }
+
   .signoff{
     text-align:center; margin-top:38px;
     font-family:var(--sans); font-weight:700;
@@ -461,6 +478,16 @@
   <symbol id="ico-mute" viewBox="0 0 24 24">
     <path d="M11 5 6.5 9H3v6h3.5L11 19z"/>
     <path d="M16.5 9.5 21 14m0-4.5L16.5 14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" fill="none"/>
+  </symbol>
+  <symbol id="ico-instagram" viewBox="0 0 24 24">
+    <path d="M7.5 2.8h9A4.7 4.7 0 0 1 21.2 7.5v9a4.7 4.7 0 0 1-4.7 4.7h-9A4.7 4.7 0 0 1 2.8 16.5v-9A4.7 4.7 0 0 1 7.5 2.8z"
+          fill="none" stroke="currentColor" stroke-width="1.9"/>
+    <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.9"/>
+    <circle cx="17.4" cy="6.6" r="1.35" fill="currentColor"/>
+  </symbol>
+  <symbol id="ico-tiktok" viewBox="0 0 24 24">
+    <path d="M14.3 2.4h3.1c.2 1.6 1.1 3 2.5 3.7.7.4 1.4.6 2.1.6v3.2a8 8 0 0 1-4.6-1.5v6.4a6.4 6.4 0 1 1-6.4-6.4c.3 0 .6 0 .9.1v3.3a3.2 3.2 0 1 0 2.3 3V2.4z"
+          fill="currentColor"/>
   </symbol>
   <symbol id="ico-sound" viewBox="0 0 24 24">
     <path d="M11 5 6.5 9H3v6h3.5L11 19z"/>
@@ -525,7 +552,7 @@
           </figure>
         </div>
       </div>
-      <p class="source">Dados do TikTok · @Salkys_sz</p>
+      <p class="source">Dados do Instagram · @salkys_</p>
     </div>
   </section>
 
@@ -681,9 +708,18 @@
           </div>
         </div>
       </div>
+      <div class="redes">
+        <a href="https://instagram.com/salkys_" target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#ico-instagram"></use></svg>@salkys_
+        </a>
+        <a href="https://tiktok.com/@salkys_sz" target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#ico-tiktok"></use></svg>@salkys_sz
+        </a>
+      </div>
+
       <p class="signoff">
         Creative Portfolio
-        <span>@Salkys_ · São Paulo–SP</span>
+        <span>São Paulo–SP</span>
       </p>
     </div>
   </section>
