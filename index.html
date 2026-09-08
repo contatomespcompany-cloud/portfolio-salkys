@@ -262,15 +262,31 @@
   .shot.tilt-l{ transform:rotate(-2.5deg); }
   .shot.tilt-r{ transform:rotate(2.5deg); }
 
-  .clip{
+  /* fita washi: o elemento de scrapbook que a identidade pede.
+     Translucida, listrada, colada na diagonal do canto — como
+     foto montada em album. */
+  .fita{
     position:absolute;
-    top:-21px; right:16px;
-    width:58px; height:36px;    /* <svg> nao deriva altura do viewBox: precisa ser explicita */
-    overflow:visible;
-    z-index:3;
-    filter:drop-shadow(0 3px 4px rgba(0,0,0,.35));
+    z-index:4;
+    width:104px; height:25px;
+    top:-10px;
+    transform:rotate(-38deg);
+    background:
+      repeating-linear-gradient(115deg,
+        rgba(255,253,244,.62) 0 7px,
+        rgba(246,227,160,.74) 7px 14px);
+    border-left:1px dashed rgba(0,0,0,.10);
+    border-right:1px dashed rgba(0,0,0,.10);
+    box-shadow:0 1px 3px rgba(0,0,0,.22);
+    pointer-events:none;
   }
-  .clip.left{ right:auto; left:16px; }
+  .fita::before{                 /* brilho de cima, papel encerado */
+    content:"";
+    position:absolute; left:0; right:0; top:0; height:40%;
+    background:linear-gradient(rgba(255,255,255,.34), rgba(255,255,255,0));
+  }
+  .fita.dir{ right:-20px; transform:rotate(38deg); }
+  .fita.esq{ left:-20px; }
 
   .duo{ display:grid; grid-template-columns:1fr; gap:30px; align-items:center; }
 
@@ -442,37 +458,6 @@
 <body>
 
 <svg style="position:absolute;width:0;height:0" aria-hidden="true">
-  <symbol id="ico-clip" viewBox="0 0 100 62">
-    <defs>
-      <linearGradient id="cl-aco" x1="0" y1="0" x2=".3" y2="1">
-        <stop offset="0" stop-color="#FBFCFD"/><stop offset=".28" stop-color="#C6CCD2"/>
-        <stop offset=".62" stop-color="#7A828A"/><stop offset="1" stop-color="#AEB5BC"/>
-      </linearGradient>
-      <linearGradient id="cl-corpo" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#5C5E62"/><stop offset=".13" stop-color="#38393D"/>
-        <stop offset=".5" stop-color="#1B1C1F"/><stop offset="1" stop-color="#0B0C0E"/>
-      </linearGradient>
-      <linearGradient id="cl-brilho" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0" stop-color="#fff" stop-opacity="0"/>
-        <stop offset=".18" stop-color="#fff" stop-opacity=".36"/>
-        <stop offset=".52" stop-color="#fff" stop-opacity=".05"/>
-        <stop offset="1" stop-color="#fff" stop-opacity="0"/>
-      </linearGradient>
-    </defs>
-    <g fill="none" stroke="url(#cl-aco)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M43 33 L34 12 a4.2 4.2 0 0 1 6.6-2 L52 33"/>
-      <path d="M57 33 L66 12 a4.2 4.2 0 0 0-6.6-2 L48 33"/>
-    </g>
-    <g fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="1" stroke-linecap="round">
-      <path d="M42 30 L35.4 14"/><path d="M58 30 L64.6 14"/>
-    </g>
-    <path d="M8 28h84a3 3 0 0 1 3 3.3l-2.8 23.6A5.4 5.4 0 0 1 86.8 60H13.2a5.4 5.4 0 0 1-5.4-5.1L5 31.3A3 3 0 0 1 8 28z"
-          fill="url(#cl-corpo)"/>
-    <rect x="8" y="29.4" width="84" height="6.4" rx="2.4" fill="url(#cl-brilho)"/>
-    <path d="M14 57.6h72" stroke="#000" stroke-opacity=".5" stroke-width="2" stroke-linecap="round"/>
-    <circle cx="43" cy="32.6" r="2.7" fill="#0A0B0C"/><circle cx="57" cy="32.6" r="2.7" fill="#0A0B0C"/>
-    <circle cx="43" cy="31.8" r="1" fill="#AEB5BC"/><circle cx="57" cy="31.8" r="1" fill="#AEB5BC"/>
-  </symbol>
   <symbol id="ico-mute" viewBox="0 0 24 24">
     <path d="M11 5 6.5 9H3v6h3.5L11 19z"/>
     <path d="M16.5 9.5 21 14m0-4.5L16.5 14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" fill="none"/>
@@ -515,7 +500,7 @@
         </div>
         <div class="shot-col">
           <figure class="shot tilt-r" style="margin:0">
-            <svg class="clip left"><use href="#ico-clip"></use></svg>
+            <span class="fita esq"></span>
             <img src="img/mirante.jpg" alt="Salkys num mirante durante uma viagem" width="640" height="853">
           </figure>
         </div>
@@ -535,7 +520,7 @@
         </div>
         <div class="shot-col">
           <figure class="shot tilt-l" style="margin:0">
-            <svg class="clip"><use href="#ico-clip"></use></svg>
+            <span class="fita dir"></span>
             <img src="img/fitas.jpg" alt="Casal caminhando à beira-mar na Bahia" width="640" height="960">
           </figure>
         </div>
@@ -557,7 +542,7 @@
         </div>
         <div class="shot-col">
           <figure class="shot tilt-r" style="margin:0">
-            <svg class="clip left"><use href="#ico-clip"></use></svg>
+            <span class="fita esq"></span>
             <img src="img/aviao.jpg" alt="Salkys com a bebê no colo durante um voo" width="585" height="704">
           </figure>
         </div>
@@ -566,7 +551,7 @@
   </section>
 
   <!-- ============ ABERTURA DOS TRABALHOS ============ -->
-  <section class="band denim" id="portfolio" style="padding:44px 0 40px">
+  <section class="band denim" id="portfolio" style="padding:44px 0 78px">
     <div class="inner">
       <h2 class="section-title">Trabalhos feitos dentro dos meus nichos</h2>
     </div>
@@ -585,7 +570,7 @@
         </div>
         <div class="media">
           <div class="frame">
-            <svg class="clip"><use href="#ico-clip"></use></svg>
+            <span class="fita dir"></span>
             <video src="v/review.mp4" poster="v/review.jpg" muted loop playsinline preload="none"
                    aria-label="Conteúdo gravado para a gelateria"></video>
             <button class="mute-btn" type="button" aria-pressed="false" aria-label="Ativar som deste vídeo">
@@ -612,7 +597,7 @@
         </div>
         <div class="media right">
           <div class="frame">
-            <svg class="clip left"><use href="#ico-clip"></use></svg>
+            <span class="fita esq"></span>
             <video src="v/experiencia.mp4" poster="v/experiencia.jpg" muted loop playsinline preload="none"
                    aria-label="Conteúdo gravado para a casa de campo no Airbnb"></video>
             <button class="mute-btn" type="button" aria-pressed="false" aria-label="Ativar som deste vídeo">
@@ -638,7 +623,7 @@
         </div>
         <div class="media">
           <div class="frame">
-            <svg class="clip"><use href="#ico-clip"></use></svg>
+            <span class="fita dir"></span>
             <video src="v/hobby.mp4" poster="v/hobby.jpg" muted loop playsinline preload="none"
                    aria-label="Conteúdo de scrapbook de viagem"></video>
             <button class="mute-btn" type="button" aria-pressed="false" aria-label="Ativar som deste vídeo">
@@ -664,7 +649,7 @@
         </div>
         <div class="media right">
           <div class="frame">
-            <svg class="clip left"><use href="#ico-clip"></use></svg>
+            <span class="fita esq"></span>
             <video src="v/viagem.mp4" poster="v/viagem.jpg" muted loop playsinline preload="none"
                    aria-label="Conteúdo de viagem de barco com bebê"></video>
             <button class="mute-btn" type="button" aria-pressed="false" aria-label="Ativar som deste vídeo">
