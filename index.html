@@ -74,7 +74,9 @@
      aba saliente e sobreposicao na anterior, como arquivos numa gaveta. */
   .band{
     position:relative;
-    padding:52px 0 54px;
+    /* rodape generoso: a pasta seguinte sobe 22px e a aba dela avanca
+       mais ~44px, entao 66px do fim desta secao ficam cobertos */
+    padding:52px 0 96px;
     background-color:var(--kraft);
     border-radius:18px 18px 0 0;
     margin-top:-22px;                       /* encaixa por cima da pasta de cima */
@@ -481,7 +483,7 @@
   }
 
   @media (min-width:720px){
-    .band{ padding:56px 0 62px; }
+    .band{ padding:56px 0 104px; }
     .duo{ grid-template-columns:1.15fr .85fr; gap:36px; }
     .duo.flip .shot-col{ order:-1; }
     .shot{ width:100%; }
