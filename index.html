@@ -325,15 +325,13 @@
     margin-top:34px;
   }
   .vaga{
-    position:relative;
-    background:#fff;
-    padding:9px 9px 26px;
-    box-shadow:var(--lift);
+    margin:0;
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 2px 5px rgba(0,0,0,.10), 0 14px 28px -18px rgba(0,0,0,.40);
   }
-  .vaga:nth-child(odd){ transform:rotate(-1.8deg); }
-  .vaga:nth-child(even){ transform:rotate(1.8deg); }
-  /* height:auto e obrigatorio: sem ele o atributo height="" do HTML vence o aspect-ratio */
-  .vaga img{ width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; display:block; }
+  /* proporcao natural: a imagem aparece inteira, sem recorte */
+  .vaga img{ width:100%; height:auto; display:block; }
 
   .source{
     font-family:var(--mono); font-size:11.5px; letter-spacing:.12em;
@@ -600,19 +598,15 @@
 
       <div class="galeria">
         <figure class="vaga">
-          <span class="fita esq"></span>
           <img src="img/ugc1.jpg" alt="Celular em tripé gravando produtos de skincare" width="640" height="853" loading="lazy">
         </figure>
         <figure class="vaga">
-          <span class="fita dir"></span>
           <img src="img/ugc2.jpg" alt="Set de gravação montado em casa, com iluminação e fundo" width="640" height="853" loading="lazy">
         </figure>
         <figure class="vaga">
-          <span class="fita esq"></span>
           <img src="img/ugc3.jpg" alt="Unboxing de produto sendo gravado" width="640" height="853" loading="lazy">
         </figure>
         <figure class="vaga">
-          <span class="fita dir"></span>
           <img src="img/ugc4.jpg" alt="Prato sendo fotografado para conteúdo de gastronomia" width="640" height="800" loading="lazy">
         </figure>
       </div>
