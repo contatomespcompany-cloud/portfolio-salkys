@@ -320,8 +320,8 @@
   /* vagas de foto: trocar pelos arquivos definitivos */
   .galeria{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(min(150px,100%), 1fr));
-    gap:20px;
+    grid-template-columns:repeat(2, 1fr);   /* 2x2 no celular */
+    gap:20px 16px;
     margin-top:34px;
   }
   .vaga{
@@ -332,20 +332,8 @@
   }
   .vaga:nth-child(odd){ transform:rotate(-1.8deg); }
   .vaga:nth-child(even){ transform:rotate(1.8deg); }
-  .vaga img{ width:100%; aspect-ratio:4/5; object-fit:cover; display:block; }
-  .vaga .slot{
-    display:grid; place-items:center;
-    aspect-ratio:4/5;
-    background:
-      repeating-linear-gradient(45deg,
-        rgba(199,165,112,.16) 0 9px,
-        rgba(199,165,112,.26) 9px 18px);
-    outline:1.5px dashed rgba(28,26,23,.28);
-    outline-offset:-7px;
-    font-family:var(--mono); font-weight:700;
-    font-size:11px; letter-spacing:.14em; text-transform:uppercase;
-    color:rgba(28,26,23,.45);
-  }
+  /* height:auto e obrigatorio: sem ele o atributo height="" do HTML vence o aspect-ratio */
+  .vaga img{ width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; display:block; }
 
   .source{
     font-family:var(--mono); font-size:11.5px; letter-spacing:.12em;
@@ -501,6 +489,7 @@
     .shot{ width:100%; }
     .work{ grid-template-columns:1fr .8fr; gap:34px; }
     .work.flip .media{ order:-1; }
+    .galeria{ grid-template-columns:repeat(4, 1fr); }
   }
 
   /* ---------- impressao ---------- */
@@ -610,9 +599,22 @@
       <p class="source">Fontes: Nielsen · Stackla</p>
 
       <div class="galeria">
-        <figure class="vaga"><span class="fita esq"></span><div class="slot">foto 1</div></figure>
-        <figure class="vaga"><span class="fita dir"></span><div class="slot">foto 2</div></figure>
-        <figure class="vaga"><span class="fita esq"></span><div class="slot">foto 3</div></figure>
+        <figure class="vaga">
+          <span class="fita esq"></span>
+          <img src="img/ugc1.jpg" alt="Celular em tripé gravando produtos de skincare" width="640" height="853" loading="lazy">
+        </figure>
+        <figure class="vaga">
+          <span class="fita dir"></span>
+          <img src="img/ugc2.jpg" alt="Set de gravação montado em casa, com iluminação e fundo" width="640" height="853" loading="lazy">
+        </figure>
+        <figure class="vaga">
+          <span class="fita esq"></span>
+          <img src="img/ugc3.jpg" alt="Unboxing de produto sendo gravado" width="640" height="853" loading="lazy">
+        </figure>
+        <figure class="vaga">
+          <span class="fita dir"></span>
+          <img src="img/ugc4.jpg" alt="Prato sendo fotografado para conteúdo de gastronomia" width="640" height="800" loading="lazy">
+        </figure>
       </div>
     </div>
   </section>
