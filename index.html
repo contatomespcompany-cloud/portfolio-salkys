@@ -340,6 +340,35 @@
     text-transform:uppercase; color:var(--ink-soft); margin:18px 0 0;
   }
 
+  /* ---------- o que eu faco ---------- */
+  .formatos{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin:26px 0 0;
+    padding:0; list-style:none;
+  }
+  .formatos li{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--manila-tab);
+    border:1.5px solid rgba(28,26,23,.22);
+    border-radius:7px;
+    padding:11px 17px;
+    font-family:var(--mono);
+    font-weight:700;
+    font-size:clamp(11.5px,2.9vw,13.5px);
+    letter-spacing:.07em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .formatos li::before{            /* check: X em caixa lia como indisponivel */
+    content:"";
+    width:11px; height:7px; flex:0 0 auto;
+    border-left:2.2px solid var(--brick);
+    border-bottom:2.2px solid var(--brick);
+    transform:rotate(-45deg);
+    margin-top:-3px;
+  }
+  .obs-rosto{ margin:28px 0 0; }
+
   /* ---------- nichos ---------- */
   .work{ display:grid; grid-template-columns:1fr; gap:26px; align-items:center; }
   .brandmark{ margin:0 0 14px; }
@@ -766,6 +795,27 @@
           <span class="cap">Bahia · Com bebê</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ O QUE EU FAÇO ============ -->
+  <section class="band manila">
+    <span class="ftab pos-l">O que eu faço</span>
+    <div class="inner">
+      <p class="mono-copy">
+        Formatos que eu entrego prontos para a marca usar nos canais dela.
+        Dá para combinar mais de um no mesmo trabalho.
+      </p>
+
+      <ul class="formatos">
+        <li>Review</li>
+        <li>Rotina com o produto</li>
+        <li>Antes e depois</li>
+        <li>Vídeo orgânico</li>
+        <li>Vídeo para anúncio</li>
+      </ul>
+
+      <p class="obs-rosto"><span class="marker">Vídeos e fotos com ou sem o meu rosto.</span></p>
     </div>
   </section>
 
