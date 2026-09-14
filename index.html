@@ -392,6 +392,15 @@
   }
 
   /* controle de som por video, no canto do player — como no Instagram */
+  /* dois videos lado a lado quando a secao tem mais de uma peca */
+  .videos-par{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px 14px;
+    margin-top:30px;
+  }
+  .videos-par .frame{ width:100%; }
+
   .mute-btn{
     position:absolute;
     right:15px; bottom:47px;
@@ -771,23 +780,34 @@
   <section class="band brick">
     <span class="ftab pos-r">Hobby</span>
     <div class="inner">
-      <div class="work">
-        <div>
-          <p class="mono-copy">
-            Meu hobby me permite transmitir criatividade e publicidade
-            através de itens de papelaria, tudo dentro deste meio.
-          </p>
-        </div>
+      <p class="mono-copy">
+        Meu hobby me permite transmitir criatividade e publicidade
+        através de itens de papelaria, tudo dentro deste meio.
+      </p>
+
+      <div class="videos-par">
         <div class="media">
           <div class="frame">
-            <span class="fita dir"></span>
+            <span class="fita esq"></span>
             <video src="v/hobby.mp4" poster="v/hobby.jpg" muted loop playsinline preload="none"
-                   aria-label="Conteúdo de scrapbook de viagem"></video>
+                   aria-label="Montagem de uma página de scrapbook de viagem"></video>
             <button class="mute-btn" type="button" aria-pressed="false" aria-label="Ativar som deste vídeo">
               <svg class="ic" aria-hidden="true"><use href="#ico-mute"></use></svg>
             </button>
           </div>
-          <span class="cap">Scrapbook · Papelaria</span>
+          <span class="cap">Scrapbook · Processo</span>
+        </div>
+
+        <div class="media right">
+          <div class="frame">
+            <span class="fita dir"></span>
+            <video src="v/hobby2.mp4" poster="v/hobby2.jpg" muted loop playsinline preload="none"
+                   aria-label="Materiais de papelaria usados no scrapbook: letras de jornal e sketchbook"></video>
+            <button class="mute-btn" type="button" aria-pressed="false" aria-label="Ativar som deste vídeo">
+              <svg class="ic" aria-hidden="true"><use href="#ico-mute"></use></svg>
+            </button>
+          </div>
+          <span class="cap">Materiais · Papelaria</span>
         </div>
       </div>
     </div>
