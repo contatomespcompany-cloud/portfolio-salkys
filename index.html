@@ -140,6 +140,8 @@
   .band.manila{ background-color:var(--manila); }
   .band.brick{ background-color:var(--brick); color:#fff; }
   .band.kraft{ background-color:var(--kraft); }
+  .band.sky{ background-color:var(--sky); }
+  .sky > .ftab{ color:var(--ink); }
   .band.night{ background-color:var(--black); color:#fff; }
   .band.night::before{ display:none; }
 
@@ -305,6 +307,46 @@
     font-family:var(--sans); font-size:clamp(12.5px,3vw,14px);
     line-height:1.35; color:var(--ink-soft);
   }
+  /* sigla explicada, logo abaixo da definicao */
+  .sigla{
+    font-family:var(--sans);
+    font-size:clamp(12.5px,3vw,14.5px);
+    letter-spacing:.04em;
+    color:var(--ink-soft);
+    margin:0 0 26px;
+  }
+  .sigla b{ color:var(--ink); font-weight:700; }
+
+  /* vagas de foto: trocar pelos arquivos definitivos */
+  .galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(min(150px,100%), 1fr));
+    gap:20px;
+    margin-top:34px;
+  }
+  .vaga{
+    position:relative;
+    background:#fff;
+    padding:9px 9px 26px;
+    box-shadow:var(--lift);
+  }
+  .vaga:nth-child(odd){ transform:rotate(-1.8deg); }
+  .vaga:nth-child(even){ transform:rotate(1.8deg); }
+  .vaga img{ width:100%; aspect-ratio:4/5; object-fit:cover; display:block; }
+  .vaga .slot{
+    display:grid; place-items:center;
+    aspect-ratio:4/5;
+    background:
+      repeating-linear-gradient(45deg,
+        rgba(199,165,112,.16) 0 9px,
+        rgba(199,165,112,.26) 9px 18px);
+    outline:1.5px dashed rgba(28,26,23,.28);
+    outline-offset:-7px;
+    font-family:var(--mono); font-weight:700;
+    font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+    color:rgba(28,26,23,.45);
+  }
+
   .source{
     font-family:var(--mono); font-size:11.5px; letter-spacing:.12em;
     text-transform:uppercase; color:var(--ink-soft); margin:18px 0 0;
@@ -531,6 +573,46 @@
             <img src="img/mirante.jpg" alt="Salkys num mirante durante uma viagem" width="640" height="853">
           </figure>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE UGC ============ -->
+  <section class="band sky">
+    <span class="ftab pos-r">Por que UGC</span>
+    <div class="inner">
+      <p class="mono-copy">
+        UGC é o conteúdo que parece ter sido criado por um cliente — a forma
+        mais autêntica de uma marca aparecer. Mostra o produto na vida real,
+        no dia a dia de quem usa, e não num estúdio.
+      </p>
+      <p class="sigla"><b>User Generated Content</b> — conteúdo gerado pelo usuário</p>
+
+      <div class="chips">
+        <div class="chip-card">
+          <span class="num">60%</span>
+          <span class="desc">dos consumidores dizem que UGC é a forma mais autêntica de conteúdo — contra 16% do conteúdo de marca</span>
+        </div>
+        <div class="chip-card">
+          <span class="num">86%</span>
+          <span class="desc">consideram a autenticidade decisiva na hora de escolher quais marcas apoiar</span>
+        </div>
+        <div class="chip-card">
+          <span class="num">92%</span>
+          <span class="desc">confiam mais na recomendação de pessoas do que em qualquer outra publicidade</span>
+        </div>
+        <div class="chip-card">
+          <span class="num">6,9×</span>
+          <span class="desc">mais engajamento que o conteúdo produzido pela própria marca</span>
+        </div>
+      </div>
+
+      <p class="source">Fontes: Nielsen · Stackla</p>
+
+      <div class="galeria">
+        <figure class="vaga"><span class="fita esq"></span><div class="slot">foto 1</div></figure>
+        <figure class="vaga"><span class="fita dir"></span><div class="slot">foto 2</div></figure>
+        <figure class="vaga"><span class="fita esq"></span><div class="slot">foto 3</div></figure>
       </div>
     </div>
   </section>
