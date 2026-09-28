@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfólio Criativo · Salkys</title>
+<meta name="description" content="Portfólio UGC de Maria Eduarda Salkys — viagem, maternidade e lifestyle. Conteúdo gravado para marcas.">
+<link rel="canonical" href="https://contatomespcompany-cloud.github.io/portfolio-salkys/hoteis/">
+<meta name="theme-color" content="#2E5A93">
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- prévia ao compartilhar o link no WhatsApp, direct e e-mail -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Salkys · UGC Creator">
+<meta property="og:url" content="https://contatomespcompany-cloud.github.io/portfolio-salkys/hoteis/">
+<meta property="og:title" content="Portfólio Criativo — Maria Eduarda Salkys">
+<meta property="og:description" content="Viagem, maternidade e lifestyle. Conteúdo que conecta e converte para marcas.">
+<meta property="og:image" content="https://contatomespcompany-cloud.github.io/portfolio-salkys/img/preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Portfólio Criativo de Maria Eduarda Salkys">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Portfólio Criativo — Maria Eduarda Salkys">
+<meta name="twitter:description" content="Viagem, maternidade e lifestyle. Conteúdo que conecta e converte para marcas.">
+<meta name="twitter:image" content="https://contatomespcompany-cloud.github.io/portfolio-salkys/img/preview.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=DM+Sans:wght@400;500;700&family=Instrument+Serif&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --denim:#2E5A93;
+    --kraft:#C7A570;
+    --manila:#F0DCB8;
+    --manila-tab:#F7ECD6;
+    --brick:#AE4A45;
+    --chip:#C3CCE8;
+    --marker:#F5E93F;
+    --rust:#C1552B;
+    --sky:#C9D4EE;
+    --butter:#F7E6A8;
+    --black:#0A0A0A;
+    --paper:#FBF8F1;
+    --ink:#1C1A17;
+    --ink-soft:#4A443D;
+
+    --mono:"JetBrains Mono","SF Mono",ui-monospace,monospace;
+    --sans:"DM Sans","Helvetica Neue",sans-serif;
+    --serif:"Instrument Serif",Georgia,serif;
+
+    --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+    --lift:0 3px 6px rgba(0,0,0,.10), 0 16px 34px -18px rgba(0,0,0,.45);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--mono);
+    line-height:1.62;
+    overflow-x:hidden;          /* o conteudo reflui — nunca rola de lado */
+  }
+
+  img, video{ display:block; max-width:100%; }
+
+  /* Cada secao e uma pasta de cartolina: canto superior arredondado,
+     aba saliente e sobreposicao na anterior, como arquivos numa gaveta. */
+  .band{
+    position:relative;
+    /* rodape generoso: a pasta seguinte sobe 22px e a aba dela avanca
+       mais ~44px, entao 66px do fim desta secao ficam cobertos */
+    padding:52px 0 96px;
+    background-color:var(--kraft);
+    border-radius:18px 18px 0 0;
+    margin-top:-22px;                       /* encaixa por cima da pasta de cima */
+    box-shadow:0 -11px 26px -11px rgba(0,0,0,.55);
+  }
+  .band::before{
+    content:"";
+    position:absolute; inset:0;
+    border-radius:inherit;                  /* o grao acompanha o canto da pasta */
+    background-image:var(--grain);
+    pointer-events:none;
+    mix-blend-mode:multiply;
+  }
+  .band::after{                             /* vinco do papel na dobra de cima */
+    content:"";
+    position:absolute; left:0; right:0; top:0; height:2px;
+    border-radius:inherit;
+    background:linear-gradient(rgba(255,255,255,.40), rgba(255,255,255,0));
+    pointer-events:none;
+  }
+  .band > *{ position:relative; z-index:1; }
+
+  /* aba: mesma cartolina da pasta, saindo pra cima da borda */
+  .ftab{
+    position:absolute;
+    bottom:100%;                            /* base da aba encosta no topo da pasta */
+    display:inline-block;
+    background-color:inherit;               /* recortada da mesma cartolina da pasta */
+    background-image:var(--grain);          /* mesmo grao do corpo, senao a aba sai mais clara */
+    background-blend-mode:multiply;
+    border-radius:13px 13px 0 0;
+    padding:11px 28px 10px;
+    font-family:var(--mono);
+    font-weight:800;
+    font-size:clamp(12px,3.1vw,15px);
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    white-space:nowrap;
+    z-index:0;
+    /* a sombra sai pra cima e pros lados: e la que a aba avanca
+       sobre a pasta de tras. Pra baixo nao, porque ali e o mesmo papel. */
+    box-shadow:
+      0 -8px 17px -7px rgba(0,0,0,.58),
+      7px -6px 14px -8px rgba(0,0,0,.45),
+      -7px -6px 14px -8px rgba(0,0,0,.45);
+  }
+  .ftab::after{                             /* luz na dobra de cima da aba */
+    content:"";
+    position:absolute; left:0; right:0; top:0; height:3px;
+    border-radius:13px 13px 0 0;
+    background:linear-gradient(rgba(255,255,255,.42), rgba(255,255,255,0));
+  }
+  /* nada na base da aba: ali ela e a mesma folha da pasta, sem emenda */
+  .ftab.pos-l{ left:22px; }
+  .ftab.pos-c{ left:50%; transform:translateX(-50%); }
+  .ftab.pos-r{ right:22px; }
+
+  .kraft > .ftab, .manila > .ftab{ color:var(--ink); }
+  .brick > .ftab{ color:#FFF1EE; }
+  .denim > .ftab{ color:#F2F7FF; }
+
+  .band.denim{ background-color:var(--denim); color:#fff; }
+  .band.manila{ background-color:var(--manila); }
+  .band.brick{ background-color:var(--brick); color:#fff; }
+  .band.kraft{ background-color:var(--kraft); }
+  .band.sky{ background-color:var(--sky); }
+  .sky > .ftab{ color:var(--ink); }
+  .band.night{ background-color:var(--black); color:#fff; }
+  .band.night::before{ display:none; }
+
+  .inner{
+    width:100%;
+    max-width:760px;            /* mantem a proporcao de cartaz vertical do PDF */
+    margin:0 auto;
+    padding:0 20px;
+  }
+
+  /* ---------- aba de pasta ---------- */
+  .tab{
+    display:inline-block;
+    background:var(--manila-tab);
+    color:var(--ink);
+    font-family:var(--mono);
+    font-weight:800;
+    font-size:clamp(12px,3vw,15px);
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    padding:9px 30px 8px;
+    border-radius:9px 9px 0 0;
+    box-shadow:0 -2px 0 rgba(0,0,0,.06) inset;
+  }
+  .tab-row{ margin-bottom:22px; }
+  .tab-row.center{ text-align:center; }
+
+  /* ---------- capa ---------- */
+  .hero{
+    position:relative;   /* sem z-index: a aba da 1a pasta precisa aparecer por cima */
+    background-image:var(--grain), url("img/jeans.jpg");
+    background-size:140px, cover;
+    background-position:center, center;
+    text-align:center;
+    /* folga extra embaixo: a aba da 1a pasta sobe ~44px e nao pode
+       encostar nos botoes de contato */
+    padding:54px 0 96px;
+  }
+  .eyebrow{
+    font-family:var(--sans);
+    font-weight:500;
+    font-size:clamp(12px,3vw,14px);
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:#DCE6F5;
+    margin:0 0 10px;
+  }
+  h1{
+    font-family:var(--mono);
+    font-weight:800;
+    font-size:clamp(30px,8.4vw,62px);
+    line-height:1.02;
+    letter-spacing:.02em;
+    text-transform:uppercase;
+    color:#fff;
+    margin:0;
+    text-wrap:balance;
+    text-shadow:0 2px 10px rgba(0,0,0,.18);
+  }
+
+  /* contato ja na capa: a marca decide em ~47s e nao deve
+     precisar rolar a pagina inteira pra achar como falar com voce */
+  .hero-links{
+    display:flex; justify-content:center; flex-wrap:wrap;
+    gap:10px; margin-top:24px;
+  }
+  .hero-links a{
+    font-family:var(--mono); font-size:12.5px; font-weight:700;
+    letter-spacing:.1em; text-transform:uppercase; text-decoration:none;
+    color:#fff; background:rgba(255,255,255,.10);
+    border:1.5px solid rgba(255,255,255,.5);
+    border-radius:999px; padding:10px 22px;
+    -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+    transition:background .16s ease, color .16s ease, border-color .16s ease;
+  }
+  .hero-links a:hover{ background:#fff; color:var(--denim); border-color:#fff; }
+  .hero-links a:focus-visible{ outline:3px solid var(--marker); outline-offset:3px; }
+
+  h2.section-title{
+    font-family:var(--mono);
+    font-weight:800;
+    font-size:clamp(21px,5.6vw,40px);
+    line-height:1.12;
+    text-transform:uppercase;
+    color:#fff;
+    margin:0;
+    text-align:center;
+    text-wrap:balance;
+  }
+
+  .mono-copy{
+    font-family:var(--mono);
+    font-size:clamp(14px,3.5vw,17px);
+    line-height:1.72;
+    text-transform:uppercase;
+    margin:0 0 18px;
+    text-wrap:pretty;
+  }
+  .mono-copy:last-child{ margin-bottom:0; }
+
+  .marker{
+    display:inline-block;
+    background:var(--marker);
+    color:var(--ink);
+    font-weight:700;
+    padding:3px 12px 4px;
+    margin-top:10px;
+  }
+
+  /* ---------- polaroid + clipe ---------- */
+  .shot{
+    position:relative;
+    background:#fff;
+    width:min(100%,300px);      /* no celular vira retrato, nao imagem de fundo */
+    margin-inline:auto;
+    padding:9px 9px 26px;
+    box-shadow:var(--lift);
+  }
+  .shot img{ width:100%; height:100%; object-fit:cover; aspect-ratio:4/5; }
+  .shot.tilt-l{ transform:rotate(-2.5deg); }
+  .shot.tilt-r{ transform:rotate(2.5deg); }
+
+  /* fita washi: o elemento de scrapbook que a identidade pede.
+     Translucida, listrada, colada na diagonal do canto — como
+     foto montada em album. */
+  .fita{
+    position:absolute;
+    z-index:4;
+    width:104px; height:25px;
+    top:-10px;
+    transform:rotate(-38deg);
+    background:
+      repeating-linear-gradient(115deg,
+        rgba(255,253,244,.62) 0 7px,
+        rgba(246,227,160,.74) 7px 14px);
+    border-left:1px dashed rgba(0,0,0,.10);
+    border-right:1px dashed rgba(0,0,0,.10);
+    box-shadow:0 1px 3px rgba(0,0,0,.22);
+    pointer-events:none;
+  }
+  .fita::before{                 /* brilho de cima, papel encerado */
+    content:"";
+    position:absolute; left:0; right:0; top:0; height:40%;
+    background:linear-gradient(rgba(255,255,255,.34), rgba(255,255,255,0));
+  }
+  .fita.dir{ right:-20px; transform:rotate(38deg); }
+  .fita.esq{ left:-20px; }
+
+  .duo{ display:grid; grid-template-columns:1fr; gap:30px; align-items:center; }
+
+  /* ---------- numeros ---------- */
+  .chips{ display:grid; gap:14px; }
+  .chip-card{
+    display:flex; align-items:center; gap:16px;
+    background:var(--chip); border-radius:12px; padding:18px 20px;
+  }
+  .chip-card .num{
+    font-family:var(--mono); font-weight:800;
+    font-size:clamp(30px,7.6vw,44px); line-height:1;
+    color:var(--ink); font-variant-numeric:tabular-nums; flex:0 0 auto;
+  }
+  .chip-card .desc{
+    font-family:var(--sans); font-size:clamp(12.5px,3vw,14px);
+    line-height:1.35; color:var(--ink-soft);
+  }
+  /* sigla explicada, logo abaixo da definicao */
+  .sigla{
+    font-family:var(--sans);
+    font-size:clamp(12.5px,3vw,14.5px);
+    letter-spacing:.04em;
+    color:var(--ink-soft);
+    margin:0 0 26px;
+  }
+  .sigla b{ color:var(--ink); font-weight:700; }
+
+  /* vagas de foto: trocar pelos arquivos definitivos */
+  .galeria{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);   /* 2x2 no celular */
+    gap:20px 16px;
+    margin-top:34px;
+  }
+  .vaga{
+    margin:0;
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 2px 5px rgba(0,0,0,.10), 0 14px 28px -18px rgba(0,0,0,.40);
+  }
+  /* proporcao natural: a imagem aparece inteira, sem recorte */
+  .vaga img{ width:100%; height:auto; display:block; }
+
+  /* onde o publico esta: serie unica, uma cor so.
+     O comprimento da barra carrega a magnitude — cor nao acrescenta nada. */
+  .regiao{ margin-top:34px; }
+  .regiao-hero{
+    font-family:var(--mono);
+    font-size:clamp(14px,3.4vw,16.5px);
+    text-transform:uppercase;
+    margin:0 0 6px;
+  }
+  .regiao-hero b{
+    font-weight:800;
+    font-size:clamp(30px,7.4vw,42px);
+    line-height:1;
+    display:block;
+    font-variant-numeric:tabular-nums;
+    margin-bottom:4px;
+  }
+  .cidades{
+    list-style:none; margin:24px 0 0; padding:0;
+    display:grid; gap:16px;
+  }
+  .cidades li{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:7px 12px;
+    align-items:baseline;
+  }
+  .cidades .cid{
+    font-family:var(--mono); font-weight:700;
+    font-size:clamp(11.5px,2.9vw,13.5px);
+    letter-spacing:.09em; text-transform:uppercase;
+    color:var(--ink);
+  }
+  .cidades .pct{
+    font-family:var(--mono); font-weight:800;
+    font-size:clamp(12.5px,3vw,15px);
+    font-variant-numeric:tabular-nums;
+    color:var(--ink);
+  }
+  .cidades .barra{
+    grid-column:1 / -1;
+    height:9px; border-radius:99px;
+    background:rgba(28,26,23,.13);
+    overflow:hidden;
+  }
+  .cidades .barra i{
+    display:block; height:100%;
+    border-radius:99px;
+    background:var(--brick);
+  }
+
+  .source{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-soft); margin:18px 0 0;
+  }
+
+  /* ---------- o que eu faco ---------- */
+  .formatos{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin:26px 0 0;
+    padding:0; list-style:none;
+  }
+  .formatos li{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--manila-tab);
+    border:1.5px solid rgba(28,26,23,.22);
+    border-radius:7px;
+    padding:11px 17px;
+    font-family:var(--mono);
+    font-weight:700;
+    font-size:clamp(11.5px,2.9vw,13.5px);
+    letter-spacing:.07em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .formatos li::before{            /* check: X em caixa lia como indisponivel */
+    content:"";
+    width:11px; height:7px; flex:0 0 auto;
+    border-left:2.2px solid var(--brick);
+    border-bottom:2.2px solid var(--brick);
+    transform:rotate(-45deg);
+    margin-top:-3px;
+  }
+  .obs-rosto{ margin:28px 0 0; }
+
+  /* ---------- nichos ---------- */
+  .work{ display:grid; grid-template-columns:1fr; gap:26px; align-items:center; }
+  .brandmark{ margin:0 0 14px; }
+  .brandmark img{ height:34px; width:auto; }
+
+  .media{ position:relative; }
+  .media .frame{
+    position:relative;
+    background:#fff; padding:8px 8px 38px;
+    box-shadow:var(--lift);
+    width:min(100%,290px);
+    margin-inline:auto;
+    transform:rotate(-1.6deg);
+  }
+  .media.right .frame{ transform:rotate(1.8deg); }
+  .media video{ width:100%; aspect-ratio:9/16; object-fit:cover; background:#111; }
+  .media .cap{
+    position:absolute; left:0; right:0; bottom:12px; text-align:center;
+    padding:0 8px;
+    font-family:var(--mono); font-weight:700; font-size:11.5px;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--ink);
+    overflow-wrap:break-word;
+  }
+
+  /* controle de som por video, no canto do player — como no Instagram */
+  /* dois videos lado a lado quando a secao tem mais de uma peca */
+  .videos-par{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px 14px;
+    margin-top:30px;
+  }
+  .videos-par .frame{ width:100%; }
+
+  @media (max-width:440px){
+    .videos-par{ grid-template-columns:1fr; max-width:290px; margin-inline:auto; }
+  }
+
+  .mute-btn{
+    position:absolute;
+    right:15px; bottom:47px;
+    width:38px; height:38px;
+    display:grid; place-items:center;
+    padding:0;
+    border:none; border-radius:50%;
+    background:rgba(18,16,14,.58);
+    color:#fff;
+    cursor:pointer;
+    z-index:4;
+    -webkit-backdrop-filter:blur(5px);
+    backdrop-filter:blur(5px);
+    transition:background .16s ease, transform .16s ease;
+  }
+  .mute-btn:hover{ background:rgba(18,16,14,.84); transform:scale(1.07); }
+  .mute-btn:focus-visible{ outline:3px solid var(--marker); outline-offset:2px; }
+  .mute-btn .ic{ width:19px; height:19px; fill:currentColor; pointer-events:none; }
+
+  /* ---------- fechamento: pastas em cascata ---------- */
+  /* Tres pastas empilhadas, cada uma com sua aba e uma palavra.
+     As abas ficam escalonadas para as tres palavras serem lidas juntas. */
+  .stack{ max-width:560px; margin:0 auto; padding-top:42px; }
+
+  .fold{
+    position:relative;
+    border-radius:14px 14px 0 0;
+    min-height:62px;
+  }
+  .fold + .fold{ margin-top:-4px; }
+  .fold.rust{ background:var(--rust); }
+  .fold.sky{ background:var(--sky); }
+  .fold.butter{ background:var(--butter); min-height:0; padding:26px 0 34px; }
+
+  .wtab{
+    position:absolute;
+    bottom:100%;
+    display:inline-block;
+    background-color:inherit;              /* mesma cartolina da pasta */
+    background-image:var(--grain);
+    background-blend-mode:multiply;
+    border-radius:13px 13px 0 0;
+    padding:12px 26px 11px;
+    font-family:var(--mono);
+    font-weight:800;
+    font-size:clamp(15px,4.4vw,22px);
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    white-space:nowrap;
+    box-shadow:0 -7px 16px -9px rgba(0,0,0,.6);
+  }
+  .wtab::after{
+    content:"";
+    position:absolute; left:0; right:0; top:0; height:2px;
+    border-radius:13px 13px 0 0;
+    background:linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,0));
+  }
+  .wtab.p-l{ left:14px; }
+  .wtab.p-c{ left:50%; transform:translateX(-50%); }
+  .wtab.p-r{ right:14px; }
+
+  .fold.rust .wtab{ color:#FFF3EC; }
+  .fold.sky .wtab, .fold.butter .wtab{ color:var(--ink); }
+
+  .closing{
+    font-family:var(--serif);
+    font-size:clamp(28px,7.4vw,48px);
+    line-height:1.06;
+    text-transform:uppercase;
+    color:var(--ink);
+    text-align:center;
+    position:relative;   /* fica na mesma camada da aba, e vem depois no HTML */
+    margin:10px 0 26px;
+    padding:0 20px;
+    text-wrap:balance;
+  }
+
+  .pills{ position:relative; display:flex; flex-wrap:wrap; justify-content:center; gap:10px; padding:0 20px; }
+  .pills a{
+    font-family:var(--mono); font-size:13px; font-weight:700;
+    text-decoration:none; color:var(--ink);
+    border:1.5px solid var(--ink); border-radius:999px;
+    padding:11px 20px;
+    transition:background .16s ease, color .16s ease;
+    max-width:100%; overflow-wrap:anywhere;
+  }
+  .pills a:hover{ background:var(--ink); color:var(--butter); }
+  .pills a:focus-visible{ outline:3px solid var(--ink); outline-offset:3px; }
+
+  .redes{
+    display:flex; flex-wrap:wrap; justify-content:center;
+    gap:12px; margin-top:34px;
+  }
+  .redes a{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:var(--mono); font-size:13px; font-weight:700;
+    letter-spacing:.04em; text-decoration:none;
+    color:#fff; background:rgba(255,255,255,.07);
+    border:1.5px solid rgba(255,255,255,.32);
+    border-radius:999px; padding:11px 20px;
+    transition:background .16s ease, color .16s ease, border-color .16s ease;
+  }
+  .redes a svg{ width:19px; height:19px; flex:0 0 auto; }
+  .redes a:hover{ background:#fff; color:var(--black); border-color:#fff; }
+  .redes a:focus-visible{ outline:3px solid var(--butter); outline-offset:3px; }
+
+  .signoff{
+    text-align:center; margin-top:38px;
+    font-family:var(--sans); font-weight:700;
+    font-size:13px; letter-spacing:.16em; text-transform:uppercase;
+    color:#fff; line-height:1.8;
+  }
+  .signoff span{ color:#9A9A9A; display:block; font-weight:400; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition:none !important; }
+  }
+
+  @media (min-width:720px){
+    .band{ padding:56px 0 104px; }
+    .duo{ grid-template-columns:1.15fr .85fr; gap:36px; }
+    .duo.flip .shot-col{ order:-1; }
+    .shot{ width:100%; }
+    .work{ grid-template-columns:1fr .8fr; gap:34px; }
+    .work.flip .media{ order:-1; }
+    .galeria{ grid-template-columns:repeat(4, 1fr); }
+  }
+
+  /* ---------- impressao ---------- */
+  @page{ size:A4; margin:0; }
+  @media print{
+    *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+    .mute-btn{ display:none !important; }
+    .band::before{ display:none !important; }
+    .band, .hero{ padding:28px 0 32px; }
+    .shot, .media, .chip-card, .work, .fold, .band, .ftab{ break-inside:avoid; box-shadow:none; }
+  }
+</style>
+</head>
+<body>
+
+<svg style="position:absolute;width:0;height:0" aria-hidden="true">
+  <symbol id="ico-mute" viewBox="0 0 24 24">
+    <path d="M11 5 6.5 9H3v6h3.5L11 19z"/>
+    <path d="M16.5 9.5 21 14m0-4.5L16.5 14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" fill="none"/>
+  </symbol>
+  <symbol id="ico-instagram" viewBox="0 0 24 24">
+    <path d="M7.5 2.8h9A4.7 4.7 0 0 1 21.2 7.5v9a4.7 4.7 0 0 1-4.7 4.7h-9A4.7 4.7 0 0 1 2.8 16.5v-9A4.7 4.7 0 0 1 7.5 2.8z"
+          fill="none" stroke="currentColor" stroke-width="1.9"/>
+    <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.9"/>
+    <circle cx="17.4" cy="6.6" r="1.35" fill="currentColor"/>
+  </symbol>
+  <symbol id="ico-tiktok" viewBox="0 0 24 24">
+    <path d="M14.3 2.4h3.1c.2 1.6 1.1 3 2.5 3.7.7.4 1.4.6 2.1.6v3.2a8 8 0 0 1-4.6-1.5v6.4a6.4 6.4 0 1 1-6.4-6.4c.3 0 .6 0 .9.1v3.3a3.2 3.2 0 1 0 2.3 3V2.4z"
+          fill="currentColor"/>
+  </symbol>
+  <symbol id="ico-sound" viewBox="0 0 24 24">
+    <path d="M11 5 6.5 9H3v6h3.5L11 19z"/>
+    <path d="M15 9a4 4 0 0 1 0 6M17.7 6.6a7.5 7.5 0 0 1 0 10.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  </symbol>
+</svg>
+
+<!-- ============ CAPA ============ -->
+<header class="hero">
+  <div class="inner">
+    <p class="eyebrow">UGC Creator</p>
+    <h1>Portfólio Criativo</h1>
+    <div class="hero-links">
+      <a href="https://wa.me/5511911163399">WhatsApp</a>
+      <a href="mailto:mariaeduardasalkys@gmail.com">E-mail</a>
+      <a href="#portfolio">Ver os vídeos</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ SOBRE MIM ============ -->
+  <section class="band kraft">
+    <span class="ftab pos-l">Sobre mim</span>
+    <div class="inner">
+      <div class="duo">
+        <div>
+          <p class="mono-copy">
+            Eu sou a Salkys, tenho 22 anos, sou mãe, viajante nata
+            (conheci +10 países) e criadora de conteúdo.
+          </p>
+          <p class="mono-copy">
+            Conecto minha vida com marcas e experiências, tornando sua marca
+            mais relevante e objeto de desejo entre o meu público.
+          </p>
+        </div>
+        <div class="shot-col">
+          <figure class="shot tilt-r" style="margin:0">
+            <span class="fita esq"></span>
+            <img src="../img/mirante.jpg" alt="Salkys num mirante durante uma viagem" width="640" height="853">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE UGC ============ -->
+  <section class="band sky">
+    <span class="ftab pos-r">Por que UGC</span>
+    <div class="inner">
+      <p class="mono-copy">
+        UGC é o conteúdo que parece ter sido criado por um cliente — a forma
+        mais autêntica de uma marca aparecer. Mostra o produto na vida real,
+        no dia a dia de quem usa, e não num estúdio.
+      </p>
+      <p class="sigla"><b>User Generated Content</b> — conteúdo gerado pelo usuário</p>
+
+      <div class="chips">
+        <div class="chip-card">
+          <span class="num">60%</span>
+          <span class="desc">dos consumidores dizem que UGC é a forma mais autêntica de conteúdo — contra 16% do conteúdo de marca</span>
+        </div>
+        <div class="chip-card">
+          <span class="num">86%</span>
+          <span class="desc">consideram a autenticidade decisiva na hora de escolher quais marcas apoiar</span>
+        </div>
+        <div class="chip-card">
+          <span class="num">92%</span>
+          <span class="desc">confiam mais na recomendação de pessoas do que em qualquer outra publicidade</span>
+        </div>
+        <div class="chip-card">
+          <span class="num">6,9×</span>
+          <span class="desc">mais engajamento que o conteúdo produzido pela própria marca</span>
+        </div>
+      </div>
+
+      <p class="source">Fontes: Nielsen · Stackla</p>
+
+      <div class="galeria">
+        <figure class="vaga">
+          <img src="../img/ugc1.jpg" alt="Celular em tripé gravando produtos de skincare" width="640" height="853" loading="lazy">
+        </figure>
+        <figure class="vaga">
+          <img src="../img/ugc2.jpg" alt="Set de gravação montado em casa, com iluminação e fundo" width="640" height="853" loading="lazy">
+        </figure>
+        <figure class="vaga">
+          <img src="../img/ugc3.jpg" alt="Unboxing de produto sendo gravado" width="640" height="853" loading="lazy">
+        </figure>
+        <figure class="vaga">
+          <img src="../img/ugc4.jpg" alt="Prato sendo fotografado para conteúdo de gastronomia" width="640" height="800" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O QUE EU FAÇO ============ -->
+  <section class="band kraft">
+    <span class="ftab pos-l">O que eu faço</span>
+    <div class="inner">
+      <p class="mono-copy">
+        Formatos que eu entrego prontos para a marca usar nos canais dela.
+        Dá para combinar mais de um no mesmo trabalho.
+      </p>
+
+      <ul class="formatos">
+        <li>Review</li>
+        <li>Rotina com o produto</li>
+        <li>Antes e depois</li>
+        <li>Vídeo orgânico</li>
+        <li>Vídeo para anúncio</li>
+      </ul>
+
+      <p class="obs-rosto"><span class="marker">Vídeos e fotos com ou sem o meu rosto.</span></p>
+    </div>
+  </section>
+
+  <!-- ============ PÚBLICO ============ -->
+  <section class="band manila">
+    <span class="ftab pos-c">Público</span>
+    <div class="inner">
+      <div class="duo flip">
+        <div class="chips">
+          <div class="chip-card"><span class="num">+40%</span><span class="desc">do público tem entre 18 e 24 anos</span></div>
+          <div class="chip-card"><span class="num">+70%</span><span class="desc">do público engajado são mulheres</span></div>
+          <div class="chip-card"><span class="num">71,8%</span><span class="desc">do público é composto por mulheres</span></div>
+        </div>
+        <div class="shot-col">
+          <figure class="shot tilt-l" style="margin:0">
+            <span class="fita dir"></span>
+            <img src="../img/fitas.jpg" alt="Casal caminhando à beira-mar na Bahia" width="640" height="960">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FRASE ============ -->
+  <section class="band brick">
+    <div class="inner">
+      <div class="duo">
+        <div>
+          <p class="mono-copy">
+            Transformo viagens, maternidade e lifestyle em histórias
+            que as pessoas param pra ver —
+          </p>
+          <span class="marker">e comprar.</span>
+        </div>
+        <div class="shot-col">
+          <figure class="shot tilt-r" style="margin:0">
+            <span class="fita esq"></span>
+            <img src="../img/aviao.jpg" alt="Salkys com a bebê no colo durante um voo" width="585" height="704">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABERTURA DOS TRABALHOS ============ -->
+  <section class="band denim" id="portfolio" style="padding:44px 0 78px">
+    <div class="inner">
+      <h2 class="section-title">Trabalhos feitos dentro dos meus nichos</h2>
+    </div>
+  </section>
+
+  <!-- ============ REVIEW ============ -->
+  <section class="band kraft">
+    <span class="ftab pos-l">Review</span>
+    <div class="inner">
+      <div class="work">
+        <div>
+          <p class="mono-copy">
+            Gelateria premium em Moema que queria estar no meio
+            das escolhas entre mães.
+          </p>
+        </div>
+        <div class="media">
+          <div class="frame">
+            <span class="fita dir"></span>
+            <video src="../v/review.mp4" poster="../v/review.jpg" muted loop playsinline preload="none"
+                   aria-label="Conteúdo gravado para a gelateria"></video>
+            <button class="mute-btn" type="button" aria-pressed="false" aria-label="Ativar som deste vídeo">
+              <svg class="ic" aria-hidden="true"><use href="#ico-mute"></use></svg>
+            </button>
+            <span class="cap">Gelateria · Moema</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIÊNCIA ============ -->
+  <section class="band manila">
+    <span class="ftab pos-c">Experiência</span>
+    <div class="inner">
+      <div class="work flip">
+        <div>
+          <p class="brandmark"><img src="../img/airbnb.png" alt="Airbnb" width="420" height="190"></p>
+          <p class="mono-copy">
+            Casa de campo com público-alvo forte em famílias. Realizei uma
+            campanha de divulgação para despertar desejo na locação do Airbnb.
+          </p>
+        </div>
+        <div class="media right">
+          <div class="frame">
+            <span class="fita esq"></span>
+            <video src="v/experiencia.mp4" poster="v/experiencia.jpg" muted loop playsinline preload="none"
+                   aria-label="Conteúdo gravado para a casa de campo no Airbnb"></video>
+            <button class="mute-btn" type="button" aria-pressed="false" aria-label="Ativar som deste vídeo">
+              <svg class="ic" aria-hidden="true"><use href="#ico-mute"></use></svg>
+            </button>
+            <span class="cap">Casa de campo · Airbnb</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOBBY ============ -->
+  <section class="band brick">
+    <span class="ftab pos-r">Hobby</span>
+    <div class="inner">
+      <p class="mono-copy">
+        Meu hobby me permite transmitir criatividade e publicidade
+        através de itens de papelaria, tudo dentro deste meio.
+      </p>
+
+      <div class="videos-par">
+        <div class="media">
+          <div class="frame">
+            <span class="fita esq"></span>
+            <video src="../v/hobby.mp4" poster="../v/hobby.jpg" muted loop playsinline preload="none"
+                   aria-label="Montagem de uma página de scrapbook de viagem"></video>
+            <button class="mute-btn" type="button" aria-pressed="false" aria-label="Ativar som deste vídeo">
+              <svg class="ic" aria-hidden="true"><use href="#ico-mute"></use></svg>
+            </button>
+            <span class="cap">Scrapbook · Processo</span>
+          </div>
+        </div>
+
+        <div class="media right">
+          <div class="frame">
+            <span class="fita dir"></span>
+            <video src="../v/hobby2.mp4" poster="../v/hobby2.jpg" muted loop playsinline preload="none"
+                   aria-label="Materiais de papelaria usados no scrapbook: letras de jornal e sketchbook"></video>
+            <button class="mute-btn" type="button" aria-pressed="false" aria-label="Ativar som deste vídeo">
+              <svg class="ic" aria-hidden="true"><use href="#ico-mute"></use></svg>
+            </button>
+            <span class="cap">Materiais · Papelaria</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VIAGEM ============ -->
+  <section class="band kraft">
+    <span class="ftab pos-c">Viagem</span>
+    <div class="inner">
+      <div class="work flip">
+        <div>
+          <p class="mono-copy">
+            Roteiros reais de viagem em família, mostrando na prática
+            como é possível levar um bebê e aproveitar o destino.
+          </p>
+        </div>
+        <div class="media right">
+          <div class="frame">
+            <span class="fita esq"></span>
+            <video src="v/viagem.mp4" poster="v/viagem.jpg" muted loop playsinline preload="none"
+                   aria-label="Conteúdo de viagem de barco com bebê"></video>
+            <button class="mute-btn" type="button" aria-pressed="false" aria-label="Ativar som deste vídeo">
+              <svg class="ic" aria-hidden="true"><use href="#ico-mute"></use></svg>
+            </button>
+            <span class="cap">Bahia · Com bebê</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FECHAMENTO ============ -->
+  <section class="band night">
+    <div class="inner">
+      <p class="eyebrow" style="text-align:center;color:#fff">UGC Creator</p>
+      <div class="stack">
+        <div class="fold rust"><span class="wtab p-l">Vamos</span></div>
+        <div class="fold sky"><span class="wtab p-c">Trabalhar</span></div>
+        <div class="fold butter">
+          <span class="wtab p-r">Juntos?</span>
+          <p class="closing">
+            Conteúdos que tornam sua marca mais relevante
+            e objeto de desejo no digital
+          </p>
+          <div class="pills">
+            <a href="https://wa.me/5511911163399">(11) 91116-3399</a>
+            <a href="mailto:mariaeduardasalkys@gmail.com">mariaeduardasalkys@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="redes">
+        <a href="https://instagram.com/salkys_" target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#ico-instagram"></use></svg>@salkys_
+        </a>
+        <a href="https://tiktok.com/@salkys_sz" target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#ico-tiktok"></use></svg>@salkys_sz
+        </a>
+      </div>
+
+      <p class="signoff">
+        Creative Portfolio
+        <span>São Paulo–SP</span>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<script>
+(function(){
+  var vids = Array.prototype.slice.call(document.querySelectorAll('.media video'));
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Só baixa e roda o vídeo visível: a página abre leve no 4G da marca.
+  if ('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var v = e.target;
+        if (e.isIntersecting){
+          if (v.preload === 'none'){ v.preload = 'auto'; v.load(); }
+          var pr = v.play(); if (pr && pr.catch) pr.catch(function(){});
+        } else {
+          v.pause();
+          if (!v.muted){ v.muted = true; paint(); }   // saiu da tela, cala
+        }
+      });
+    }, { threshold:0.35 });
+    vids.forEach(function(v){ io.observe(v); });
+  } else {
+    vids.forEach(function(v){ v.controls = true; });
+  }
+
+  function btnOf(v){ return v.parentNode.querySelector('.mute-btn'); }
+
+  function paint(){
+    vids.forEach(function(v){
+      var b = btnOf(v); if (!b) return;
+      var on = !v.muted;
+      b.querySelector('use').setAttribute('href', on ? '#ico-sound' : '#ico-mute');
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.setAttribute('aria-label', on ? 'Silenciar este vídeo' : 'Ativar som deste vídeo');
+    });
+  }
+
+  vids.forEach(function(v){
+    var b = btnOf(v); if (!b) return;
+    b.addEventListener('click', function(ev){
+      ev.preventDefault();
+      var turnOn = v.muted;
+      // um de cada vez com som, como num feed
+      vids.forEach(function(o){ if (o !== v) o.muted = true; });
+      v.muted = !turnOn;
+      if (!v.muted){ var pr = v.play(); if (pr && pr.catch) pr.catch(function(){}); }
+      paint();
+    });
+  });
+
+  paint();
+})();
+</script>
+
+</body>
+</html>
